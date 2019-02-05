@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.RegularExpressions;
+using Newtonsoft.Json;
 
 namespace SMSSending
 {
     public class Phone
     {
+        
         [Key]
+        [JsonProperty("Id")]
         public int Id { get; set; }
+        [JsonProperty("PhoneNumber")]
         public string PhoneNumber { get; set; }
         
 

@@ -6,20 +6,19 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace SMSSending
 {
-    [DataContract]
-    [Serializable]
+   
     public class Message
     {
         [Key]
-        [DataMember]
+        [JsonProperty("MessageId")]
         public int MessageId { get; set; }
-        [DataMember]
+        [JsonProperty("UserId")]
         public int UserId { get; set; }
-      
-        [DataMember]
+        [JsonProperty("TextOfMessage")]
         public string TextOfMessage { get; set; }
 
         [ForeignKey("UserId")]
